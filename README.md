@@ -4,7 +4,7 @@ Finds earliest Global Entry appointment and notifies user via GMail and Slack.
 ## Configurations Needed
 
 ### Update `LOCATION_ID` in `app.py`
-Set location ID to the Global Entry service center you want to track. You can find this by checking the requests made in the Network tab of the Chrome or Firefox Developer Tools when you click on the service center name in the Global Entry appointment scheduler.
+Set location ID to the Global Entry service center you want to track. You can find this by checking the API requests made in the Network tab of the Chrome or Firefox Developer Tools when you click on the service center name in the Global Entry appointment scheduler.
 
 Ex. this sets the location ID to Los Angeles service center.
 
