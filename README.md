@@ -27,7 +27,7 @@ SLACK_WEBHOOK = "slack webhook of the channel where you want to be notified"
 ```
 git clone https://github.com/bellicose100xp/global_entry_appt_finder.git
 cd global_entry_appt_finder
-pip -m venv .venv
+python -m venv .venv
 
 # mac-linux
 ./.venv/Scripts/activate
