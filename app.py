@@ -1,5 +1,3 @@
-from slack import send_slack_message
-from email_gmail import send_email
 import requests
 import time
 import datetime
@@ -9,10 +7,18 @@ import logging
 
 import colorama
 from colorama import Back, Fore, Style
+from configure_app import EMAIL_NOTIFICATION, SLACK_NOTIFICATION, YEAR, MONTH, DAY, LOCATION_ID
+
+if EMAIL_NOTIFICATION == "yes":
+    from email_gmail import send_email
+
+if SLACK_NOTIFICATION == "yes":
+    from slack import send_slack_message
+
 colorama.init(autoreset=True)  # reset color after each print statement
 
-## Location ID of the Los Angeles Global Entry Service Center
-LOCATION_ID = 5180
+# Location ID of the Los Angeles Global Entry Service Center
+# LOCATION_ID = 5180
 
 # create log folder if doesnt exists
 # get executable parent folder
@@ -41,7 +47,7 @@ params = {
     "locationId": LOCATION_ID
 }
 
-current_appt = datetime.date(2022, 8, 1)
+current_appt = datetime.date(YEAR, MONTH, DAY)
 appt_emailed = None
 next_appt_printed = None
 check_interval = 10
@@ -83,8 +89,12 @@ while True:
         print(f"{Back.MAGENTA} {appt_found_message}")
         logging.info(f"***** {appt_found_message} *****")
 
-        send_email(subject=appt_found_message, content=message_body)
-        send_slack_message(message_body)
+        if EMAIL_NOTIFICATION == "yes":
+            send_email(subject=appt_found_message, content=message_body)
+
+        if SLACK_NOTIFICATION == "yes":
+            send_slack_message(message_body)
+
         appt_emailed = next_available_appt_date
 
     time.sleep(check_interval)
