@@ -5,14 +5,14 @@ Finds earliest Global Entry appointment for provided service center and optional
 
 ### Update `configure_app.py`
 Set whether you wnat to receive email and slack notificaitons. Allowed values are `yes` and `no`.
-```
+```python
 EMAIL_NOTIFICATION = "yes"
 SLACK_NOTIFICATION = "yes"
 ```
 
 Configure for which available appointments you want to be notified. You'll only be notified if the appointment found is earlier than the date you set below.
 
-```
+```python
 YEAR = 2023
 MONTH = 8
 DAY = 1
@@ -39,7 +39,7 @@ SLACK_WEBHOOK = "slack webhook of the channel where you want to be notified"
 
 ## Initial app setup and run
 
-```
+```shell
 git clone https://github.com/bellicose100xp/global_entry_appt_finder.git
 cd global_entry_appt_finder
 python -m venv .venv
@@ -61,7 +61,7 @@ python app.py
 Press `ctrl +c` on the keyboard
 
 ## How to re-run the app after intitial setup
-```
+```shell
 cd global_entry_appt_finder
 
 # mac-linux
