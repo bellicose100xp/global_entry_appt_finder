@@ -4,7 +4,7 @@ Finds earliest Global Entry appointment for provided service center and optional
 ## Configurations Needed
 
 ### Update `configure_app.py`
-Set whether you wnat to receive email and slack notificaitons. Allowed values are `yes` and `no`.
+Set whether you want to receive email and slack notificaitons. Allowed values are `yes` and `no`.
 ```python
 EMAIL_NOTIFICATION = "yes"
 SLACK_NOTIFICATION = "yes"
