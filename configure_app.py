@@ -1,7 +1,7 @@
 ###### Setup Notification type ######
 # FORMAT: Allowed values are "yes" or "no"
-EMAIL_NOTIFICATION = "yes"
-SLACK_NOTIFICATION = "yes"
+EMAIL_NOTIFICATION = "no"
+SLACK_NOTIFICATION = "no"
 
 ##### Notify only if appointment are available earlier than #####
 # FORMAT: Numbers only, no quotes, no leading zeros
